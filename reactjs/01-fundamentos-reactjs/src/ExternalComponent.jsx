@@ -1,3 +1,9 @@
-export function ExternalComponent() {
-  return <h1>Componente externo</h1>;
+export function ExternalComponent(props) {
+  return (
+    <>
+      <h3>Componente externo</h3>
+      <strong>{props.title}</strong>
+      <p>{props.content}</p>
+    </>
+  );
 }
