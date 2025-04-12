@@ -1,4 +1,7 @@
+import { Header } from "./components/Header";
 import { ExternalComponent } from "./ExternalComponent";
+import "./styles.css";
+
 function Post({ author, content }) {
   return (
     <>
@@ -12,6 +15,7 @@ function Post({ author, content }) {
 export function App() {
   return (
     <>
+      <Header />
       <h1>Hello world</h1>
       <Post
         author="Marcelo Borges"
