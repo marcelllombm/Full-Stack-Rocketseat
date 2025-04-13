@@ -1,35 +1,28 @@
 import { Header } from "./components/Header";
-import { ExternalComponent } from "./ExternalComponent";
-import "./global.css";
+import { Sidebar } from "./components/Sidebar";
+import { Post } from "./Post";
 
-function Post({ author, content }) {
-  return (
-    <>
-      <h3> Compomente interno</h3>
-      <strong>{author}</strong>
-      <p>{content}</p>
-    </>
-  );
-}
+import styles from "./App.module.css";
+import "./global.css";
 
 export function App() {
   return (
     <>
       <Header />
-      <h1>Hello world</h1>
-      <Post
-        author="Marcelo Borges"
-        content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab officiis repellendus fuga facere possimus cumque numquam, placeat asperiores? Dignissimos nisi consectetur quidem placeat quo adipisci doloremque odio deserunt nostrum quasi!"
-      />
-      <Post
-        author="Lucas Jo"
-        content="novo post:   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint corporis dignissimos vitae perspiciatis repellat quam, asperiores eos possimus, qui officia id nisi ex itaque. Est distinctio officia aliquid velit recusandae."
-      />
+      <div className={styles.wrapper}>
+        <Sidebar />
+        <main>
+          <Post
+            author="Marcelo Borges"
+            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta veniam impedit minus architecto reiciendis provident aspernatur tenetur cum. Earum, odit corporis. Nemo illum, suscipit autem praesentium excepturi assumenda ipsam?"
+          />
 
-      <ExternalComponent
-        title="Mais um post"
-        content="outro conteúdo: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint corporis dignissimos vitae perspiciatis repellat quam, asperiores eos possimus, qui officia id nisi ex itaque. Est distinctio officia aliquid velit recusandae."
-      />
+          <Post
+            author="Marcelo Borges"
+            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta veniam impedit minus architecto reiciendis provident aspernatur tenetur cum. Earum, odit corporis. Nemo illum, suscipit autem praesentium excepturi assumenda ipsam?"
+          />
+        </main>
+      </div>
     </>
   );
 }
