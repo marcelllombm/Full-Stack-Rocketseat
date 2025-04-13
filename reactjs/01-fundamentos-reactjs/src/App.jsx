@@ -1,6 +1,6 @@
 import { Header } from "./components/Header";
 import { ExternalComponent } from "./ExternalComponent";
-import "./styles.css";
+import "./global.css";
 
 function Post({ author, content }) {
   return (
