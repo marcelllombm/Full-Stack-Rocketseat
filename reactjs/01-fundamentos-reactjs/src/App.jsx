@@ -18,7 +18,7 @@ export function App() {
           />
 
           <Post
-            author="Marcelo Borges"
+            author="Lucas Monta"
             content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta veniam impedit minus architecto reiciendis provident aspernatur tenetur cum. Earum, odit corporis. Nemo illum, suscipit autem praesentium excepturi assumenda ipsam?"
           />
         </main>
