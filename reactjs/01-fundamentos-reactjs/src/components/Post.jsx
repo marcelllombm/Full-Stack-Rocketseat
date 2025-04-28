@@ -2,7 +2,8 @@ import { Avatar } from "./Avatar.jsx";
 import { Comment } from "./Comment.jsx";
 import styles from "./Post.module.css";
 
-export function Post({ author }) {
+export function Post(props) {
+  console.log(props.author);
   return (
     <article className={styles.post}>
       <header>
@@ -10,8 +11,8 @@ export function Post({ author }) {
           <Avatar alt="Marcelo" src="https://github.com/marcelllombm.png" />
 
           <div className={styles.authorInfo}>
-            <strong>{author}</strong>
-            <span>Web Developer</span>
+            <strong>{props.author.name}</strong>
+            <span>{props.author.role}</span>
           </div>
         </div>
 
