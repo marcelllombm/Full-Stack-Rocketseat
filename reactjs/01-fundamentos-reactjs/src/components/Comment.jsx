@@ -1,8 +1,24 @@
 import { ThumbsUp, Trash } from "@phosphor-icons/react";
 import styles from "./Comment.module.css";
 import { Avatar } from "./Avatar";
+import { useState } from "react";
 
-export function Comment() {
+export function Comment({ content, onDeleteComment }) {
+  const [likeCount, setLinkCount] = useState(0);
+  function handlerDeleteComment() {
+    onDeleteComment(content);
+  }
+
+  function handlerLinkComment() {
+    // ser vc for atualizar uma informaçao e esse  informaçao e depende do valor que ela tinha
+    // anteriomente, ou seja depende dela mesma e sempre legal fazer atualizacao usado esse padrao
+    // de funçao. como esta em baixo.
+
+    setLinkCount((stateAnterior) => {
+      return stateAnterior + 1;
+    });
+  }
+
   return (
     <div className={styles.comment}>
       <Avatar
@@ -21,16 +37,16 @@ export function Comment() {
               </time>
             </div>
 
-            <button title="Delete comentário">
+            <button onClick={handlerDeleteComment} title="Delete comentário">
               <Trash size={24} />
             </button>
           </header>
-          <p>Muito bo Devon, parabéns!!</p>
+          <p>{content}</p>
         </div>
         <footer>
-          <button>
+          <button onClick={handlerLinkComment}>
             <ThumbsUp />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likeCount}</span>
           </button>
         </footer>
       </div>
