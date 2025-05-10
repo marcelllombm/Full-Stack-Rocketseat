@@ -10,8 +10,15 @@ export function Comment({ content, onDeleteComment }) {
   }
 
   function handlerLinkComment() {
-    setLinkCount(likeCount + 1);
+    // ser vc for atualizar uma informaçao e esse  informaçao e depende do valor que ela tinha
+    // anteriomente, ou seja depende dela mesma e sempre legal fazer atualizacao usado esse padrao
+    // de funçao. como esta em baixo.
+
+    setLinkCount((stateAnterior) => {
+      return stateAnterior + 1;
+    });
   }
+
   return (
     <div className={styles.comment}>
       <Avatar
