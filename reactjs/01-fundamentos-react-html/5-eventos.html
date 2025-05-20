@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocketseat - React.js - Fundamentos</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+
+    <script type="text/babel">
+
+      function Alert01(){
+
+          function handleAlertClick(){
+            alert("Uma mensagem de Alerta")
+          }
+
+        return(
+          <button onClick={handleAlertClick}>Mostrar Alerta</button>
+        )
+      }
+
+      function Alerta02(){
+        function handleAlertClick(msg){
+          alert(msg)
+        }
+        return(
+          <button onClick={()=> handleAlertClick("uma mensagem com parâmentos")}>
+            Mostrar Alerta c/ Parâmento
+          </button>
+          )
+      }
+
+      function Alerta03(){
+        function handleAlertClick(event){
+          alert(event.target.previousSibling.value)
+        }
+
+        function handleOnChange(event){
+          console.log(event.target.value)
+        }
+        return(
+          <div>
+            <input type="text" planceholder="Digite algo ...." OnChange={handleOnChange}/>
+            <button onClick={handleAlertClick}>
+              Mostrar Alerta do campo de texto</button>
+            </div>
+        )
+      }
+      function App(){
+        return (
+          <main>
+            <Alert01/>
+            <Alerta02/>
+            <Alerta03/>
+          </main>
+          )
+      }
+      ReactDOM.createRoot(document.getElementById("root")).render(<App/> );
+
+    </script>
+  </body>
+</html>
