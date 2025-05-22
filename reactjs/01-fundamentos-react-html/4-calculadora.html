@@ -42,7 +42,6 @@
     class="bg-linear-[180deg,_#807ece_0%,_#8e7ece_100%] text-(--text) font-(--font-sans)"
   >
     <div id="root"></div>
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -159,24 +158,36 @@
             <Text
               as="div"
               variant="muted"
-              className="flex items-center justify-end"
+              className="flex items-center justify-end h-7"
             >
-              {operation}
+              {result && operation}
             </Text>
 
             <div
               className={`
-                  flex items-center justify-between
+                  flex items-center justify-between h-9
                 `}
             >
               <Text variant="muted">=</Text>
-              <Text variant="blast">{result}</Text>
+              <Text variant="blast">{result || operation}</Text>
             </div>
           </div>
         );
       }
 
       function Calculator() {
+        const [operation, setOperation] = React.useState("");
+        const [result, setResult] = React.useState("");
+
+        function handleInputClick(input) {
+          if (input === "=") {
+            const operationResult = eval(operation);
+            setResult(operationResult);
+            return;
+          }
+          setOperation(`${operation} ${input}`);
+        }
+
         return (
           <Card
             className={`
@@ -185,7 +196,7 @@
 
             `}
           >
-            <CalculatorDisplay operation="1 + 1" result="2" />
+            <CalculatorDisplay operation={operation} result={result} />
 
             <div className="flex flex-col gap-3">
               {buttons.map((row, index) => (
@@ -195,6 +206,7 @@
                       key={button.input}
                       className={button.className || "w-16 h-16"}
                       variant={button.variant}
+                      onClick={() => handleInputClick(button.input)}
                     >
                       {button.input}
                     </Button>
