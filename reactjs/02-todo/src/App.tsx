@@ -1,5 +1,5 @@
 import { Text } from "./components/Text";
-import TashIcon from "./assets/icons/Trash.svg?react";
+import TrashIcon from "./assets/icons/Trash.svg?react";
 import CheckIcon from "./assets/icons/Check.svg?react";
 import PencilIcon from "./assets/icons/Pencil.svg?react";
 import SpinnerIcon from "./assets/icons/Spinner.svg?react";
@@ -9,6 +9,7 @@ import XIcon from "./assets/icons/X.svg?react";
 import { Icon } from "./components/Icon";
 import { Badge } from "./components/Badge";
 import { Button } from "./components/Button";
+import { ButtonIcon } from "./components/ButtonIcon";
 
 export function App() {
   return (
@@ -24,7 +25,7 @@ export function App() {
       </div>
 
       <div className="flex gap-1">
-        <Icon svg={TashIcon} className="fill-pink-base" />
+        <Icon svg={TrashIcon} className="fill-pink-base" />
         <Icon svg={CheckIcon} />
         <Icon svg={PlusIcon} />
         <Icon svg={SpinnerIcon} animate />
@@ -39,6 +40,12 @@ export function App() {
 
       <div>
         <Button icon={PlusIcon}>Nova Tarefa </Button>
+      </div>
+
+      <div className="flex gap-1">
+        <ButtonIcon icon={TrashIcon} />
+        <ButtonIcon icon={TrashIcon} variant="secondary" />
+        <ButtonIcon icon={TrashIcon} variant="tertiary" />
       </div>
     </div>
   );
