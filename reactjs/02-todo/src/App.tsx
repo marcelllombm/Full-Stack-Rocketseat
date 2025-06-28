@@ -11,6 +11,7 @@ import { Badge } from "./components/Badge";
 import { Button } from "./components/Button";
 import { ButtonIcon } from "./components/ButtonIcon";
 import { InputText } from "./components/InputText";
+import { InputCheckbox } from "./components/InputCheckbox";
 
 export function App() {
   return (
@@ -51,6 +52,10 @@ export function App() {
 
       <div>
         <InputText />
+      </div>
+
+      <div>
+        <InputCheckbox />
       </div>
     </div>
   );
