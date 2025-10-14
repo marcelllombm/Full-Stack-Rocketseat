@@ -1,17 +1,15 @@
 import { NavLink, Outlet } from "react-router";
-import { Container } from "../components/Container";
 import { Text } from "../components/Text";
+import { Header } from "../core-components/Header";
+import { MainContain } from "../core-components/MainContent";
 
 export function LayoutMain() {
   return (
     <>
-      <Container as="header" className="mt-3 md:mt-20">
-        Olá mundo - Header
-      </Container>
-
-      <main className="mt-4 md:mt-8">
+      <Header />
+      <MainContain>
         <Outlet />
-      </main>
+      </MainContain>
 
       <footer className="my-5 md:my-10 ">
         <nav className="flex items-center justify-center gap-4">
