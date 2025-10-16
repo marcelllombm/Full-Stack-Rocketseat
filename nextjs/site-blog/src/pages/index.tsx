@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Header } from "@/components/Header";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div className="min-h-screen min-w-full bg-stone-950">
-      <h1 className="text-4xl text-green-400">Titulo</h1>
-      <Button variant="secondary">Click</Button>
+      <Header />
     </div>
   );
 }
