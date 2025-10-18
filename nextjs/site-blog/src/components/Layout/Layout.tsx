@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
-import { Footer } from "../Footer";
-import { Header } from "../Header";
+import { Footer } from "../footer";
+import { Header } from "../header";
 
 interface LayoutProps {
   children: React.ReactNode;
