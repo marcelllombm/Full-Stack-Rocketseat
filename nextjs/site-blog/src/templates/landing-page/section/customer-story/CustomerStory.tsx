@@ -1,4 +1,3 @@
-import { PT_Sans_Caption } from "next/font/google";
 import Image from "next/image";
 
 const costumerStories = [
