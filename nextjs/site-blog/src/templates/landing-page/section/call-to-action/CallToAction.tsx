@@ -12,7 +12,7 @@ export const CallToAction = () => {
       />
 
       <div
-        className="absolute left-1/2 top-1/2 -translate-x-[35%]
+        className="absolute left-1/2 top-[-1rem] -translate-x-[35%]
       p-4 bg-cyan-300 rounded-full w-fit z-10 "
       >
         <Store className="text-cyan-100" />
