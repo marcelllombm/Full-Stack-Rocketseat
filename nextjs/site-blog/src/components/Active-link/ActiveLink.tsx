@@ -6,7 +6,7 @@ type ActiveLinkProps = {
   children: React.ReactNode;
 } & LinkProps;
 
-export function ActiveLink({ children, href, ...rest }: ActiveLinkProps) {
+export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
   const router = useRouter();
   const isCurrentPath = router.asPath === href || router.asPath === rest.as;
   return (
@@ -20,4 +20,4 @@ export function ActiveLink({ children, href, ...rest }: ActiveLinkProps) {
       {children}
     </Link>
   );
-}
+};

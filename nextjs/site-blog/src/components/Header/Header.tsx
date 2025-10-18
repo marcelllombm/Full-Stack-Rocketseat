@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { ActiveLink } from "../Active-link";
 import { Logo } from "../Logo";
 
-export function Header() {
+export const Header = () => {
   return (
     <header
       className="fixed top-0 z-50 w-full border-b
@@ -23,4 +23,4 @@ export function Header() {
       </div>
     </header>
   );
-}
+};

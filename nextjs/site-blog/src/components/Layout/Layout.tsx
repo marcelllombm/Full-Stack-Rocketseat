@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Layout({ children }: LayoutProps) {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={`${inter.className}}relative flex min-h-screen flex-col bg-gray-700`}>
       <Header />
@@ -16,4 +16,4 @@ export function Layout({ children }: LayoutProps) {
       <Footer />
     </div>
   );
-}
+};
