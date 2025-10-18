@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { ActiveLink } from "../Active-link";
-import Image from "next/image";
+import { Logo } from "../Logo";
 
 export function Header() {
   return (
@@ -11,9 +11,7 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 ls:px-80">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/">
-            <Image src="/LogoSite.svg" alt="Logo site" width={116} height={32} />
-          </Link>
+          <Logo />
           <nav className="flex items-center gap-6">
             <ActiveLink href="/">Início</ActiveLink>
             <ActiveLink href="/blog">Blog</ActiveLink>
