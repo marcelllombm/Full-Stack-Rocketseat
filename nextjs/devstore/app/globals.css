@@ -7,4 +7,5 @@
 html,
 body {
   font-family: var(--font-sans);
+  --grid-template-rows-app: min-content max-content 1fr;
 }
