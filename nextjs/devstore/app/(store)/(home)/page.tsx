@@ -12,7 +12,11 @@ type productsProps = {
 };
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/products/featured", { cache: "no-cache" });
+  const res = await fetch("http://localhost:3000/api/products/featured", {
+    next: {
+      revalidate: 60 * 60,
+    },
+  });
   const products = await res.json();
   const [firstProduct, ...otherProducts] = products;
 
