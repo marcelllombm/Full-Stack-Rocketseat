@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ProductPage() {
+export default async function ProductPage() {
   return (
     <div className="relative grid max-h-[860px] grid-cols-3">
       <div className="col-span-2 overflow-hidden">
